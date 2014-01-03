@@ -1,0 +1,37 @@
+body {
+    background-color: #11171c;
+    margin: 0;
+    overflow: hidden;
+}
+
+#spinner {
+    position: fixed;
+    top: 200px;
+    left: 200px;
+}
+
+#rotateLeft {
+    position: fixed;
+    top: 45%;
+    left: 5%;
+    visibility: hidden;
+}
+
+#rotateRight {
+    position: fixed;
+    top: 45%;
+    right: 5%;
+    visibility: hidden;
+}
+
+#shoot {
+    position: fixed;
+    top: 20%;
+    visibility: hidden;
+}
+
+#boost {
+    position: fixed;
+    top: 5%;
+    visibility: hidden;
+}

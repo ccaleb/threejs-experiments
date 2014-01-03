@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Intergalactive Highway</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="../libs/three.js"></script>
+    <script type="text/javascript" src="../libs/jquery-1.9.0.js"></script>
+    <script type="text/javascript" src="../libs/OBJLoader.js"></script>
+    <script type="text/javascript" src="../libs/MTLLoader.js"></script>
+    <script type="text/javascript" src="../libs/OBJMTLLoader.js"></script>
+    <script type="text/javascript" src="misc.js"></script>
+    <script type="text/javascript" src="Main.js"></script>
+    <script type="text/javascript" src="Bullet.js"></script>
+    <script type="text/javascript" src="Obstacle.js"></script>
+    <script type="text/javascript" src="Spaceship.js"></script>
+    <script type="text/javascript" src="Skybox.js"></script>
+    <script type="text/javascript" src="Highway.js"></script>
+    <script type="text/javascript" src="Earth.js"></script>
+</head>
+<body>
+<div id="spinner"><image src="resources/ui/spinner.png"/></div>
+<div id="rotateLeft"><image onload="resizeUI();" src="resources/ui/rotate-left-key.png"/></div>
+<div id="rotateRight"><image onload="resizeUI();" src="resources/ui/rotate-right-key.png"/></div>
+<div id="shoot"><image onload="resizeUI();" src="resources/ui/shoot-key.png"/></div>
+<div id="boost"><image onload="resizeUI();" src="resources/ui/boost-key.png"/></div>
+<div id="WebGL-output"></div>
+<script type="text/javascript">
+    $(function () {
+        setupLoadingSpinner();
+        var main = new Main();
+
+        $(window).resize(function() {
+            main.resize();
+            resizeUI();
+        });
+
+        $(window).keydown(function(e) {
+            reduceKeyOverlayOpacity();
+            console.log(e.keyCode);
+            if (e.keyCode == 37 || e.keyCode == 81)
+            {
+                main.startRotation(-0.03);
+            }
+            else if (e.keyCode == 39 || e.keyCode == 87)
+            {
+                main.startRotation(0.03);
+            }
+            else if (e.keyCode == 82)
+            {
+                main.render();
+            }
+            else if (e.keyCode == 32)
+            {
+                main.fire();
+            }
+            else if (e.keyCode == 66)
+            {
+                main.boost();
+            }
+        });
+
+        $(window).keyup(function(e) {
+            if (e.keyCode != 32)
+            {
+                main.stopRotation();
+            }
+        });
+    });
+</script>
+</body>
+</html>
