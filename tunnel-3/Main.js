@@ -18,7 +18,7 @@ function Main()
     this.camera = new THREE.PerspectiveCamera(
     	45,
     	window.innerWidth / window.innerHeight,
-    	0.1, 1000
+    	0.1, 1400
 	);
 
     var ambi = new THREE.AmbientLight(0x181818);
@@ -62,7 +62,6 @@ Main.prototype.spaceshipLoaded = function(event)
 
     this.spaceship = new Spaceship(event.content, this.highway.getSpline(), this.camera);
     this.scene.add(this.spaceship);
-    this.render();
 
     this.checkResourcesLoaded();
 };
@@ -78,6 +77,7 @@ Main.prototype.checkResourcesLoaded = function()
     if (this.contentToLoad == 0)
     {
         removeSpinner();
+        this.render();
     }
 };
 
