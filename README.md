@@ -8,3 +8,5 @@ A collection of three.js experiments by *[Christopher Caleb](http://www.yeahbuti
 *[Tunnel 2](http://www.yeahbutisitflash.com/?p=6528)*
 
 *[Tunnel 3](http://www.yeahbutisitflash.com/?p=6557)*
+
+*[Moon Buggy](http://www.yeahbutisitflash.com/?p=7105)*
